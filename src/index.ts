@@ -13,6 +13,9 @@ import dialog from './libs/dialog';
 import target from './libs/targetmob';
 //import tooltip from './libs/tooltip';
 
+
+import { death } from './libs/aod/audio';
+
 // Webpack imports for dist files
 import './index.html';
 import './styles.css';
@@ -37,6 +40,7 @@ window.addEventListener('load', () => {
 // If the app is not running in alt1, display a message to install the app
 if (!window.alt1) {
 	// Create a base app URL, to make it work both in development and production
+	death.play();
 	const appURL = window.location.href.replace(/index\..*/, '');
 	main.innerHTML = `Click <a href="alt1://addapp/${appURL}appconfig.json">here</a> to add this app to Alt1 Toolkit.`;
 } else {
