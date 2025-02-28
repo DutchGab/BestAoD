@@ -4764,17 +4764,18 @@ module.exports = __webpack_require__.p + "index.html";
 "use strict";
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var alt1_base__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! alt1/base */ "../node_modules/alt1/dist/base/index.js");
-/* harmony import */ var alt1_base__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(alt1_base__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var alt1_base__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! alt1/base */ "../node_modules/alt1/dist/base/index.js");
+/* harmony import */ var alt1_base__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(alt1_base__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _libs_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./libs/util */ "./libs/util.ts");
 /* harmony import */ var _libs_settings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./libs/settings */ "./libs/settings.ts");
 /* harmony import */ var _libs_chatbox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./libs/chatbox */ "./libs/chatbox.ts");
 /* harmony import */ var _libs_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./libs/dialog */ "./libs/dialog.ts");
 /* harmony import */ var _libs_targetmob__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./libs/targetmob */ "./libs/targetmob.ts");
-/* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index.html */ "./index.html");
-/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles.css */ "./styles.css");
-/* harmony import */ var _assets_appconfig_json__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./assets/appconfig.json */ "./assets/appconfig.json");
-/* harmony import */ var _assets_icon_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./assets/icon.png */ "./assets/icon.png");
+/* harmony import */ var _libs_aod_audio__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./libs/aod/audio */ "./libs/aod/audio.ts");
+/* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index.html */ "./index.html");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles.css */ "./styles.css");
+/* harmony import */ var _assets_appconfig_json__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./assets/appconfig.json */ "./assets/appconfig.json");
+/* harmony import */ var _assets_icon_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./assets/icon.png */ "./assets/icon.png");
 
 
 
@@ -4787,6 +4788,7 @@ __webpack_require__.r(__webpack_exports__);
 //import dropsMenu from './libs/dropsmenu';
 
 //import tooltip from './libs/tooltip';
+
 // Webpack imports for dist files
 
 
@@ -4808,23 +4810,25 @@ window.addEventListener('load', () => {
 // If the app is not running in alt1, display a message to install the app
 if (!window.alt1) {
     // Create a base app URL, to make it work both in development and production
+    _libs_aod_audio__WEBPACK_IMPORTED_MODULE_5__.death.play();
     const appURL = window.location.href.replace(/index\..*/, '');
     main.innerHTML = `Click <a href="alt1://addapp/${appURL}appconfig.json">here</a> to add this app to Alt1 Toolkit.`;
 }
 else {
+    _libs_aod_audio__WEBPACK_IMPORTED_MODULE_5__.death.play();
     // Let alt1 know about the app
-    alt1_base__WEBPACK_IMPORTED_MODULE_9__.identifyApp('appconfig.json');
+    alt1_base__WEBPACK_IMPORTED_MODULE_10__.identifyApp('appconfig.json');
     // Add the user's app skin as theme to the document
     document.documentElement.dataset.theme = alt1.skinName;
     // Set up a screen capture and an interval for later recapture
-    let screen = alt1_base__WEBPACK_IMPORTED_MODULE_9__.captureHoldFullRs();
+    let screen = alt1_base__WEBPACK_IMPORTED_MODULE_10__.captureHoldFullRs();
     // Set the interval to the recommended interval based on capture method, defaults to 600ms
     let interval = alt1.captureInterval || 600;
     let captureInterval = null;
     // Check if the home button is found
-    const home = alt1_base__WEBPACK_IMPORTED_MODULE_9__.webpackImages({ button: __webpack_require__(/*! ./assets/homebutton.data.png */ "./assets/homebutton.data.png") });
+    const home = alt1_base__WEBPACK_IMPORTED_MODULE_10__.webpackImages({ button: __webpack_require__(/*! ./assets/homebutton.data.png */ "./assets/homebutton.data.png") });
     await home.promise;
-    let homePos = alt1_base__WEBPACK_IMPORTED_MODULE_9__.findSubimage(screen, home.raw.button);
+    let homePos = alt1_base__WEBPACK_IMPORTED_MODULE_10__.findSubimage(screen, home.raw.button);
     let homeFound = homePos.length > 0;
     // Found state elements
     const foundState = document.querySelectorAll('[data-found]');
@@ -4847,11 +4851,11 @@ else {
             clearInterval(captureInterval);
         }
         // First capture the screen again, and then start the interval after a delay
-        screen = alt1_base__WEBPACK_IMPORTED_MODULE_9__.captureHoldFullRs();
+        screen = alt1_base__WEBPACK_IMPORTED_MODULE_10__.captureHoldFullRs();
         run();
         setTimeout(() => {
             captureInterval = setInterval(() => {
-                screen = alt1_base__WEBPACK_IMPORTED_MODULE_9__.captureHoldFullRs();
+                screen = alt1_base__WEBPACK_IMPORTED_MODULE_10__.captureHoldFullRs();
                 run();
             }, interval);
         }, 1000);
@@ -4906,8 +4910,8 @@ else {
         };
         // Recheck the home button
         if (!captureInterval || !screen)
-            screen = alt1_base__WEBPACK_IMPORTED_MODULE_9__.captureHoldFullRs();
-        homePos = alt1_base__WEBPACK_IMPORTED_MODULE_9__.findSubimage(screen, home.raw.button);
+            screen = alt1_base__WEBPACK_IMPORTED_MODULE_10__.captureHoldFullRs();
+        homePos = alt1_base__WEBPACK_IMPORTED_MODULE_10__.findSubimage(screen, home.raw.button);
         homeFound = homePos.length > 0;
         // Information to display
         const info = {
@@ -4996,6 +5000,71 @@ else {
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } }, 1);
+
+/***/ }),
+
+/***/ "./libs/aod/audio.ts":
+/*!***************************!*\
+  !*** ./libs/aod/audio.ts ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   bomb: () => (/* binding */ bomb),
+/* harmony export */   cruor: () => (/* binding */ cruor),
+/* harmony export */   death: () => (/* binding */ death),
+/* harmony export */   east: () => (/* binding */ east),
+/* harmony export */   fumus: () => (/* binding */ fumus),
+/* harmony export */   glacies: () => (/* binding */ glacies),
+/* harmony export */   newKill: () => (/* binding */ newKill),
+/* harmony export */   north: () => (/* binding */ north),
+/* harmony export */   pool: () => (/* binding */ pool),
+/* harmony export */   poopPop: () => (/* binding */ poopPop),
+/* harmony export */   umbra: () => (/* binding */ umbra),
+/* harmony export */   updateBombVolume: () => (/* binding */ updateBombVolume),
+/* harmony export */   updateDeathVolume: () => (/* binding */ updateDeathVolume),
+/* harmony export */   updateNewKillVolume: () => (/* binding */ updateNewKillVolume),
+/* harmony export */   updateOrderVolume: () => (/* binding */ updateOrderVolume),
+/* harmony export */   updatePoolVolume: () => (/* binding */ updatePoolVolume),
+/* harmony export */   updateSmokeVolume: () => (/* binding */ updateSmokeVolume)
+/* harmony export */ });
+const newKill = new Audio("../../assets/audio/NewKill.mp3");
+const updateNewKillVolume = (volume) => {
+    newKill.volume = volume;
+};
+const north = new Audio("../../assets/audio/North.mp3");
+const east = new Audio("../../assets/audio/East.mp3");
+const updateSmokeVolume = (volume) => {
+    north.volume = volume;
+    east.volume = volume;
+};
+const pool = new Audio("../../assets/audio/Pool.mp3");
+const poopPop = new Audio("../../assets/audio/PoolPopping.mp3");
+const updatePoolVolume = (volume) => {
+    pool.volume = volume;
+    poopPop.volume = volume;
+};
+const bomb = new Audio("../../assets/audio/Bomb.mp3");
+const updateBombVolume = (volume) => {
+    bomb.volume = volume;
+};
+const umbra = new Audio("../../assets/audio/Umbra.mp3");
+const glacies = new Audio("../../assets/audio/Glacies.mp3");
+const cruor = new Audio("../../assets/audio/Cruor.mp3");
+const fumus = new Audio("../../assets/audio/Fumus.mp3");
+const updateOrderVolume = (volume) => {
+    umbra.volume = volume;
+    glacies.volume = volume;
+    cruor.volume = volume;
+    fumus.volume = volume;
+};
+const death = new Audio("../../assets/audio/Death.mp3");
+const updateDeathVolume = (volume) => {
+    death.volume = volume;
+};
+
 
 /***/ }),
 
