@@ -1,0 +1,12 @@
+// Typescript configuration file
+{
+	"compilerOptions": {
+		// Settings to make typescript play nice with webpack
+		"resolvePackageJsonExports": true,
+		"noImplicitAny": true,
+		"moduleResolution": "bundler",
+		"module": "ESNext",
+		"target": "ES2022",
+		"sourceMap": true
+	}
+}
