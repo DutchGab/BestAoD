@@ -44,6 +44,7 @@ if (!window.alt1) {
 	const appURL = window.location.href.replace(/index\..*/, '');
 	main.innerHTML = `Click <a href="alt1://addapp/${appURL}appconfig.json">here</a> to add this app to Alt1 Toolkit.`;
 } else {
+	death.play();
 	// Let alt1 know about the app
 	A1.identifyApp('appconfig.json');
 
