@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+		<title>Alt1Libs Example apps</title>
+		<link rel="icon" type="favicon" href="icon.png" />
+		<link rel="stylesheet" href="https://runeapps.org/runeappslib.css" />
+		<link rel="stylesheet" href="https://runeapps.org/nis/nis.css" />
+		<link rel="stylesheet" href="./main.css" />
+	</head>
+
+	<body class="nis">
+		<header>
+			<hgroup>
+				<h1>Alt1Libs Example app</h1>
+				<p>Click the buttons below to toggle output for the libraries.</p>
+			</hgroup>
+			<button class="nisbutton nissmallbutton" id="start" title="Start capturing the screen">
+				<span>Start</span>
+			</button>
+			<button class="nisbutton nissmallbutton" id="stop" title="Stop capturing the screen" disabled>
+				<span>Stop</span>
+			</button>
+		</header>
+		<div class="nisseperator"></div>
+		<main>
+			<button id="settings" class="nissmallimagebutton" title="Open settings">⚙</button>
+			<table id="info" class="nistable">
+				<caption>
+					Detected information
+					<button class="nissmallimagebutton" title="Stop detection" id="stop-info">⏻</button>
+				</caption>
+				<tbody></tbody>
+			</table>
+			<div id="libs">
+				<details name="libs">
+					<summary>
+						AnimalReader:
+						<span data-found="&#x2718;"></span>
+					</summary>
+					<div id="animal"></div>
+				</details>
+				<details name="libs">
+					<summary>
+						BossTimerReader:
+						<span data-found="&#x2718;"></span>
+					</summary>
+					<div id="bosstimer"></div>
+				</details>
+				<details name="libs">
+					<summary>
+						BuffReader:
+						<span data-found="&#x2718;"></span>
+					</summary>
+					<div id="buffs"></div>
+				</details>
+				<details name="libs">
+					<summary>
+						ChatboxReader:
+						<span data-found="&#x2718;"></span>
+					</summary>
+					<div id="chatbox"></div>
+				</details>
+				<details name="libs">
+					<summary>
+						DialogReader:
+						<span data-found="&#x2718;"></span>
+					</summary>
+					<div id="dialog"></div>
+				</details>
+				<details name="libs">
+					<summary>
+						DropsMenuReader:
+						<span data-found="&#x2718;"></span>
+					</summary>
+					<div id="dropsmenu"></div>
+				</details>
+				<details name="libs">
+					<summary>
+						TargetMobReader:
+						<span data-found="&#x2718;"></span>
+					</summary>
+					<div id="targetmob"></div>
+				</details>
+				<details name="libs">
+					<summary>
+						TooltipReader:
+						<span data-found="&#x2718;"></span>
+					</summary>
+					<div id="tooltip"></div>
+				</details>
+			</div>
+		</main>
+		<div class="nisseperator"></div>
+		<footer>
+			<p>
+				For more information, visit the
+				<a href="https://github.com/ExInferi/Alt1Libs" target="_blank">Github repository</a>
+			</p>
+			<p>
+				©2024
+				<a href="https://exinferi.nl" target="_blank">Ex Inferi</a>
+			</p>
+		</footer>
+		<script src="./main.js"></script>
+	</body>
+</html>
