@@ -4,14 +4,14 @@ import { foundPos, FoundPos, checkmark, timeDiff } from './libs/util';
 import openSettings from './libs/settings';
 
 // imports for the libraries
-import animal from './libs/animal';
-import bossTimer from './libs/bosstimer';
-import buffs from './libs/buffs';
+//import animal from './libs/animal';
+//import bossTimer from './libs/bosstimer';
+//import buffs from './libs/buffs';
 import chatbox from './libs/chatbox';
 import dialog from './libs/dialog';
-import dropsMenu from './libs/dropsmenu';
+//import dropsMenu from './libs/dropsmenu';
 import target from './libs/targetmob';
-import tooltip from './libs/tooltip';
+//import tooltip from './libs/tooltip';
 
 // Webpack imports for dist files
 import './index.html';
