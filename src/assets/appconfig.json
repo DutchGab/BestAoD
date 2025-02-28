@@ -9,6 +9,6 @@
 	"minWidth": 440,
 	"minHeight": 350,
 	"requestHandlers": [],
-	"activators": ["regex:(Read.*)", "regex:(Talk to.*)", "Rest"],
+	"activators": [],
 	"permissions": "pixel,gamestate,overlay"
 }
